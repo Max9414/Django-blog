@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    body = models.TextField
+    body = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
