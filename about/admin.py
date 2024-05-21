@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(About)
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'body', 'created_on')
-    summernote_fields = ('body',)
+    list_display = ('title', 'created_on')
+    summernote_fields = ('body')
 
 # Register your models here.
