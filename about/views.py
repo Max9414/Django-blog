@@ -1,9 +1,15 @@
 from django.shortcuts import render
-from django.views import generic
 from .models import About
 
-# Create your views here.
 
-class PostList(generic.ListView):
-    queryset = About.objects.all()
-    template_name = "about/index.html"
+def about_me(request):
+    """
+    Renders the About page
+    """
+    about = About.objects.all().order_by('created_on').first()
+
+    return render(
+        request,
+        "about/about.html",
+        {"about": about},
+    )
